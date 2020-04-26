@@ -18,12 +18,13 @@ public class RoomController {
     private RoomServices roomServices;
 
     @GetMapping
-    public List<Room> getAllRooms(){
+    public List<Room> getRooms(){
         return roomServices.getAllRooms();
     }
 
-    @GetMapping("/{title}")
-    public Room getRoom (@PathVariable String title){
-        return roomServices.getRoom(title);
+    @GetMapping("/{id}")
+    public Room getRoom (@PathVariable int id){
+        return roomServices.getRoom(id);
     }
+
 }

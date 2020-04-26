@@ -5,6 +5,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -30,15 +32,21 @@ public class User {
     @JoinColumn(name = "team_id")
     private Team team;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Booking> bookings = new ArrayList<>();
+
+
     public User(){}
 
-    public User (int id, String email, String name, Team team/*, Role role*/){
+    public User (int id, String email, String name, Team team, Role role){
         this.id = id;
         this.email = email;
         this.name = name;
         this.team = team;
-        //this.role = role;
+        this.role = role;
     }
+
+
 
     public int getId() {
         return id;

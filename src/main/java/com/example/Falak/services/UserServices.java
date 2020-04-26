@@ -3,13 +3,9 @@ package com.example.Falak.services;
 import com.example.Falak.model.User;
 import com.example.Falak.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServices  {
@@ -35,24 +31,14 @@ public class UserServices  {
 
     public void addUser(User user){
         userRepository.save(user);
-        //list.add(user);
     }
 
     public void updateUser(User user){
         userRepository.save(user);
-        /*for ( int i = 0 ; i < list.size(); i++ ){
-            if ( list.get(i).getId().equals(id) )
-                list.set(i,user);
-        }*/
     }
 
-    public void deleteUser(int id){
+    public void deleteUser(int id) {
         userRepository.deleteById(id);
-        /*for ( int i = 0 ; i < list.size(); i++ ){
-            if ( list.get(i).getId().equals(id) )
-                list.remove(i);
-        }*/
     }
-
 
 }

@@ -40,7 +40,7 @@ public class AuthController {
 
             System.out.println("NEW AUTH REQUEST");
 
-            try{
+            try {
                 System.out.println("Testing: in login method, email:"+authenticationRequest.getEmail()+"\n password:"+authenticationRequest.getPassword());
 
                 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(),authenticationRequest.getPassword()));

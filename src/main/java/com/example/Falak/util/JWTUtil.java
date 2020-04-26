@@ -16,7 +16,7 @@ import java.util.function.Function;
 @Service
 public class JWTUtil {
 
-    private static final int HOURS = 1;
+    private static final int HOURS = 9;
 
     private String SECRET_KEY = "SECRET";
 

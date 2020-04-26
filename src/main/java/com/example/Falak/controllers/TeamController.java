@@ -32,7 +32,8 @@ public class TeamController {
 
     @PutMapping("/{id}")
     public void updateTeam(@RequestBody Team team, @PathVariable int id){
-        teamServices.updateTeam(team);
+        if(team.getId() == id)
+            teamServices.updateTeam(team);
     }
 
     @DeleteMapping("/{id}")
